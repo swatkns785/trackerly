@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_one :school_district
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -19,4 +21,12 @@ class User < ActiveRecord::Base
 
   validates :password_confirmation,
     presence: true
+
+  validates :role,
+    presence: true,
+    inclusion: { in: ["district-admin", "school-admin", "teacher", "student"] }
+
+  def name
+    "#{first_name} #{last_name}"
+  end
 end
