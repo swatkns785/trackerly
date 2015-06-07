@@ -1,9 +1,5 @@
-class SchoolDistrict < ActiveRecord::Base
-  belongs_to :user
-  has_many :schools
-
-  validates :user,
-    presence: true
+class School < ActiveRecord::Base
+  belongs_to :school_district
 
   validates :name,
     presence: true
@@ -26,11 +22,7 @@ class SchoolDistrict < ActiveRecord::Base
                       :with => %r{\d{5}(-\d{4})?},
                       :message => "should be 12345 or 12345-1234"
 
-  validates :user_id,
+  validates :school_district_id,
     presence: true,
     numericality: { only_integer: true }
-
-  def district_admin
-    user
-  end
 end

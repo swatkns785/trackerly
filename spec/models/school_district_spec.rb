@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe SchoolDistrict, type: :model do
   it { should belong_to(:user) }
+  it { should have_many(:schools) }
 
   it { should have_valid(:name).when('Boston Public Schools') }
   it { should_not have_valid(:name).when(nil, '') }
