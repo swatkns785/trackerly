@@ -21,3 +21,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'puma'
 end
+
+group :test do
+  gem 'coveralls', require: false
+end

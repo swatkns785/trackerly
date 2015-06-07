@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/swatkns785/trackerly.svg?branch=master)](https://travis-ci.org/swatkns785/trackerly) [![Code Climate](https://codeclimate.com/github/swatkns785/trackerly.png)](https://codeclimate.com/github/swatkns785/trackerly) [![Coverage Status](https://coveralls.io/repos/swatkns785/trackerly/badge.png)](https://coveralls.io/r/swatkns785/trackerly)
+
 ##Tracker.ly
 
 ###A tool for school districts to manage teacher and student activity and performance.
