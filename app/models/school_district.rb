@@ -27,7 +27,7 @@ class SchoolDistrict < ActiveRecord::Base
     presence: true,
     numericality: { only_integer: true }
 
-  def admin
+  def district_admin
     user
   end
 end

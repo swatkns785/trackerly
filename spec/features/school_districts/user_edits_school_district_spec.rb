@@ -28,8 +28,16 @@ feature "district admin edits school district", %q(
     end
   end
 
-  context "as an unauthenticated user" do
-    scenario "cannot edit school district"
+  context "as a user who's not the school district admin" do
+    scenario "cannot edit school district" do
+      school_district = FactoryGirl.create(:school_district)
+      other_user = FactoryGirl.create(:user)
+      sign_in_as(other_user)
+
+      visit school_district_path(school_district)
+
+      expect(page).to_not have_content "Edit District Information"
+    end
   end
 
 end
