@@ -7,8 +7,10 @@ RSpec.describe User, type: :model do
   it { should have_valid(:last_name).when('Watson', 'Jones') }
   it { should_not have_valid(:last_name).when(nil, '') }
 
-  it { should have_valid(:email).when('anthony.jones@gmail.com', 'jane.watson@yahoo.com') }
-  it { should_not have_valid(:email).when(nil, 'jane', '.com', 'jane@net', 'anthony.com') }
+  it { should have_valid(:email).when('anthony.jones@gmail.com',
+    'jane.watson@yahoo.com') }
+  it { should_not have_valid(:email).when(nil, 'jane', '.com', 'jane@net',
+    'anthony.com') }
 
   it 'requires a unique email' do
     user = FactoryGirl.create(:user)
