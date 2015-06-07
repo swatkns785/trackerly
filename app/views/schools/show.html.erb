@@ -1,0 +1,10 @@
+<h3><%= @school.name %></h3>
+
+<p><%= link_to "#{@school.website}", @school.website %></p>
+<p>School District: <%= @school.school_district.name %></p>
+<p>District Administrator: <%= @school.school_district.user.name %></p>
+
+<p>
+  <%= @school.address %><br>
+  <%= "#{@school.city}, #{@school.state} #{@school.zip_code}" %>
+</p>

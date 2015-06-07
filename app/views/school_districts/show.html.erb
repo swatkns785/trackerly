@@ -9,3 +9,7 @@
   <p><%= @school_district.address %></p>
   <p><%= "#{@school_district.city}, #{@school_district.state} #{@school_district.zip_code}" %></p>
 </div>
+
+<div class="schools-box">
+  <%= link_to "Add School", new_school_district_school_path(@school_district, @school) %>
+</div>

@@ -20,4 +20,7 @@ RSpec.describe School, type: :model do
 
   it { should have_valid(:zip_code).when('02115', '02111-2115') }
   it { should_not have_valid(:zip_code).when(nil, '', '123') }
+
+  it { should have_valid(:school_district_id).when(5, 25) }
+  it { should_not have_valid(:school_district_id).when(nil, '', 'yo')}
 end
