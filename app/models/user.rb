@@ -25,4 +25,8 @@ class User < ActiveRecord::Base
   validates :role,
     presence: true,
     inclusion: { in: ["district-admin", "school-admin", "teacher", "student"] }
+
+  def name
+    "#{first_name} #{last_name}"
+  end
 end
