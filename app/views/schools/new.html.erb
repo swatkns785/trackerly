@@ -1,0 +1,9 @@
+<% if @school.errors.any? %>
+  <% @school.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+<% end %>
+
+<h3>Fill out the form below to add a school to your district.</h3>
+
+<%= render "new_form" %>

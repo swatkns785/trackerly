@@ -27,8 +27,11 @@ As a school district's administrator
 I want to edit my school district's information
 So I can maintain the most up to date information
 
-[ ] I must be able edit the school's information from the show page
-[ ] Upon editing, I see a notice confirming success
+[x] I must be able edit the school's information from the show page
+[x] Upon editing, I see a notice confirming success
+[x] I can only edit the district's information if I'm the district admin
+
+Status: Complete
 ```
 
 ####Schools
