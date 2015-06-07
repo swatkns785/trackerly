@@ -26,4 +26,8 @@ class SchoolDistrict < ActiveRecord::Base
   validates :user_id,
     presence: true,
     numericality: { only_integer: true }
+
+  def district_admin
+    user
+  end
 end
