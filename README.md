@@ -17,10 +17,18 @@ I want to create a school district
 So I can keep track of teacher/student performance
 
 Acceptance Criteria:
-[ ] I should be able to create my school district upon creating an account
-[ ] At default, nobody else should be the administrator for my school district
+[x] I should be able to create my school district upon creating an account
+[x] At default, nobody else should be the administrator for my school district
 
-Status: Incomplete
+Status: Complete
+```
+```
+As a school district's administrator
+I want to edit my school district's information
+So I can maintain the most up to date information
+
+[ ] I must be able edit the school's information from the show page
+[ ] Upon editing, I see a notice confirming success
 ```
 
 ####Schools

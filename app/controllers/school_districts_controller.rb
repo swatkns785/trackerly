@@ -5,9 +5,6 @@ class SchoolDistrictsController < ApplicationController
 
   def new
     @school_district = SchoolDistrict.new
-    @states_array = %w(AK AL AR AZ CA CO CT DC DE FL GA HI IA ID IL IN KS KY LA
-    MA MD ME MI MN MO MS MT NC ND NE NH NJ NM NV NY OH OK OR PA RI SC SD TN TX
-    UT VA VT WA WI WV WY)
   end
 
   def create
@@ -18,6 +15,20 @@ class SchoolDistrictsController < ApplicationController
       redirect_to school_district_path(school_district)
     else
       render :new
+    end
+  end
+
+  def edit
+    @school_district = SchoolDistrict.find(params[:id])
+  end
+
+  def update
+    school_district = SchoolDistrict.find(params[:id])
+    if school_district.update_attributes(school_district_params)
+      flash[:notice] = 'You have successfully edited your school district.'
+      redirect_to school_district_path(school_district)
+    else
+      render :edit
     end
   end
 

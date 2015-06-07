@@ -1,4 +1,5 @@
 <h2><%= @school_district.name %></h2>
+<p class="edit"><%= link_to "Edit District Information", edit_school_district_path(@school_district) %></p>
 
 <p class="district-admin">District Administrator: <%= @school_district.user.name %></p>
 

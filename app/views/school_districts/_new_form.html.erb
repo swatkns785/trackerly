@@ -1,0 +1,34 @@
+<%= form_for @school_district do |f| %>
+  <div class="field">
+    <%= f.label :name %><br/>
+    <%= f.text_field :name, auto_focus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :website %><br/>
+    <%= f.text_field :website %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address %><br/>
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %><br/>
+    <%= f.text_field :city %>
+  </div>
+
+  <div class="state_field">
+    <%= f.label :state %><br/>
+    <%= f.select :state, options_for_select(states_array) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :zip_code, 'Zip Code' %><br/>
+    <%= f.text_field :zip_code %>
+  </div>
+
+  <%= f.submit 'Create School District' %>
+
+<% end %>

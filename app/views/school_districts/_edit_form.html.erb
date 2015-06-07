@@ -21,7 +21,7 @@
 
   <div class="state_field">
     <%= f.label :state %><br/>
-    <%= f.select :state, options_for_select(@states_array) %>
+    <%= f.select :state, options_for_select(states_array) %>
   </div>
 
   <div class="field">
@@ -29,6 +29,6 @@
     <%= f.text_field :zip_code %>
   </div>
 
-  <%= f.submit 'Create School District' %>
+  <%= f.submit 'Submit' %>
 
 <% end %>
