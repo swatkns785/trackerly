@@ -7,10 +7,10 @@ feature 'a district administrator creates schools', %q(
   So that I can see what schools are in my district
 
   Acceptance Criteria:
-  [ ] I must be able to add schools from the school district page w/ AJAX
-  [ ] I must be able to declare the school's type (elementary, middle, high)
-  [ ] A school must have a name, address, principal, principal's email address
-  [ ] Upon successfully creating, I receive a notice confirming success
+  [x] I must be able to add schools from the school district page
+  [x] I must be able to declare the school's type (elementary, middle, high)
+  [x] A school must have a name and address, website optional
+  [x] Upon successfully creating, I receive a notice confirming success
 
 ) do
 
@@ -26,9 +26,9 @@ feature 'a district administrator creates schools', %q(
       fill_in "Website", with: "http://www.bls.org"
       fill_in "Address", with: "123 Main Street"
       fill_in "City", with: "Boston"
-      select 'MA', from: 'State'
-      fill_in 'Zip Code', with: '02115'
-      click_button 'Create School'
+      select "MA", from: "State"
+      fill_in "Zip Code", with: "02115"
+      click_button "Create School"
 
       expect(page).to have_content "You have successfully added a school to your district."
       expect(page).to have_content "Boston Latin School"
@@ -38,11 +38,22 @@ feature 'a district administrator creates schools', %q(
       expect(page).to have_content "School District: #{school_district.name}"
       expect(page).to have_content "District Administrator: #{school_district.user.name}"
     end
+
+    scenario "admin makes errors" do
+      # school_district = FactoryGirl.create(:school_district)
+      # sign_in_as(school_district.user)
+      #
+      # visit school_district_path(school_district)
+      # click_link "Add School"
+      #
+      # click_button "Create School"
+      #
+      # expect(page).to have_content "can't be blank"
+    end
   end
 
   context "as a non-administrator" do
-    scenario "cannot create school" do
+    scenario "cannot create school"
 
-    end
   end
 end

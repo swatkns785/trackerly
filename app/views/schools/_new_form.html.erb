@@ -4,6 +4,11 @@
     <%= f.text_field :name, auto_focus: true %>
   </div>
 
+  <div class="school_type_field">
+    <%= f.label :type %><br/>
+    <%= f.select :type, options_for_select(school_types_array) %>
+  </div>
+
   <div class="field">
     <%= f.label :website %><br/>
     <%= f.text_field :website %>

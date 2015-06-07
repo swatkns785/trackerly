@@ -23,4 +23,6 @@ RSpec.describe School, type: :model do
 
   it { should have_valid(:school_district_id).when(5, 25) }
   it { should_not have_valid(:school_district_id).when(nil, '', 'yo')}
+
+  it { should have_valid(:type).when('high school', 'elementary school', 'middle school', 'other') }
 end
