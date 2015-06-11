@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150611202123) do
+ActiveRecord::Schema.define(version: 20150611213618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,16 +31,17 @@ ActiveRecord::Schema.define(version: 20150611202123) do
   add_index "school_districts", ["name"], name: "index_school_districts_on_name", using: :btree
 
   create_table "schools", force: :cascade do |t|
-    t.string   "name",               null: false
+    t.string   "name",                                  null: false
     t.string   "website"
-    t.string   "address",            null: false
-    t.string   "city",               null: false
-    t.string   "state",              null: false
-    t.string   "zip_code",           null: false
-    t.integer  "school_district_id", null: false
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.string   "address",                               null: false
+    t.string   "city",                                  null: false
+    t.string   "state",                                 null: false
+    t.string   "zip_code",                              null: false
+    t.integer  "school_district_id",                    null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.string   "school_type"
+    t.string   "status",             default: "Active", null: false
   end
 
   add_index "schools", ["name"], name: "index_schools_on_name", using: :btree

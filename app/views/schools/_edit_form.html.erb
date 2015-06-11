@@ -33,6 +33,11 @@
     <%= f.label :zip_code, 'Zip Code' %><br/>
     <%= f.text_field :zip_code %>
   </div>
+  
+  <div class="status_field">
+    <%= f.label :status %><br/>
+    <%= f.select :status, options_for_select(school_statuses) %>
+  </div>
 
   <%= f.submit 'Update School' %>
 <% end %>

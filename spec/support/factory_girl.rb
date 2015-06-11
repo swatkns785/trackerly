@@ -28,5 +28,6 @@ FactoryGirl.define do
     state 'MA'
     zip_code '02115'
     school_type 'high school'
+    status 'Active'
   end
 end

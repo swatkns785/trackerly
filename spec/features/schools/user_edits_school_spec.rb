@@ -7,8 +7,9 @@ feature "district admin edits school info", %q(
   So that I can change the details of the school
 
   Acceptance Criteria:
-  [ ] I must be able to edit a school's information from a school district page w/ AJAX
-  [ ] Upon successfully editing, I receive a notice confirming success
+  [x] I must be able to edit a school's information from a school district page
+  [x] Upon successfully editing, I receive a notice confirming success
+  [x] If I make errors, I'm notified and return to the edit page
 
 ) do
   let(:school) { FactoryGirl.create(:school) }
