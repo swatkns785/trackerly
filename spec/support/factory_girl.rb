@@ -18,4 +18,15 @@ FactoryGirl.define do
     state 'MA'
     zip_code '02115'
   end
+
+  factory :school do
+    association :school_district
+    name 'Boston Latin School'
+    website 'http://www.bls.org'
+    address '155 Mills Road'
+    city 'Boston'
+    state 'MA'
+    zip_code '02115'
+    school_type 'high school'
+  end
 end

@@ -1,0 +1,9 @@
+<% if @school.errors.any? %>
+  <% @school.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+<% end %>
+
+<h3><%= "Update #{@school.name}'s information below."%></h3>
+
+<%= render "edit_form" %>
