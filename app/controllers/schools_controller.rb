@@ -17,6 +17,7 @@ class SchoolsController < ApplicationController
       flash[:notice] = "You have successfully added a school to your district."
       redirect_to school_district_school_path(@school_district, @school)
     else
+      flash[:alert] = "Fill out the forms correctly."
       render :new
     end
   end
@@ -34,6 +35,7 @@ class SchoolsController < ApplicationController
       flash[:notice] = "You have successfully updated this school."
       redirect_to school_district_school_path(@school_district, @school)
     else
+      flash[:alert] = "Fill out the forms correctly."
       render :edit
     end
   end
