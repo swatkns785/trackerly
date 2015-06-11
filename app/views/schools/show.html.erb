@@ -1,4 +1,5 @@
 <h3><%= @school.name %></h3>
+<li><%= "Status: #{@school.status}" %></li>
 <li><%= link_to "Edit School Info", edit_school_district_school_path(@school.school_district, @school) %></li>
 
 <p><%= link_to "#{@school.website}", @school.website %></p>

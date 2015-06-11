@@ -25,4 +25,8 @@ class School < ActiveRecord::Base
   validates :school_district_id,
     presence: true,
     numericality: { only_integer: true }
+
+  validates :status,
+    presence: true,
+    inclusion: { in: %w(Active Inactive) }
 end

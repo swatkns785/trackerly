@@ -6,7 +6,10 @@ module SchoolsHelper
   end
 
   def school_types_array
-    %("high school" "middle school" "elementary school" "other")
+    %w("high school" "middle school" "elementary school" "other")
   end
 
+  def school_statuses
+    %w(Active Inactive)
+  end
 end

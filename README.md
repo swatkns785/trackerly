@@ -41,12 +41,12 @@ I want to create schools for my district
 So that I can see what schools are in my district
 
 Acceptance Criteria:
-[ ] I must be able to add schools from the school district page w/ AJAX
-[ ] I must be able to declare the school's type (elementary, middle, high)
-[ ] A school must have a name, address, principal, principal's email address
-[ ] Upon successfully creating, I receive a notice confirming success
+[x] I must be able to add schools from the school district page
+[x] I must be able to declare the school's type (elementary, middle, high)
+[x] A school must have a name and address, website optional
+[x] Upon successfully creating, I receive a notice confirming success
 
-Status: Incomplete
+Status: Complete
 ```
 ```
 As a school district administrator
@@ -54,10 +54,11 @@ I want to edit a school's information
 So that I can change the details of the school
 
 Acceptance Criteria:
-[ ] I must be able to edit a school's information from a school district page w/ AJAX
-[ ] Upon successfully editing, I receive a notice confirming success
+[x] I must be able to edit a school's information from a school district page
+[x] Upon successfully editing, I receive a notice confirming success
+[x] If I make errors, I'm notified and return to the edit page
 
-Status: Incomplete
+Status: Complete
 ```
 ```
 As a school district administrator
@@ -75,10 +76,11 @@ I want to change a school's status to 'inactive'
 So that it's status is reflected as 'inactive'
 
 Acceptance Criteria:
-[ ] I must receive a confirmation box asking me to confirm
-[ ] Upon declaring a school 'inactive', I receive confirmation
+[x] I must be able to change the status on the edit form
+[x] Upon declaring a school 'inactive', I receive confirmation
+[ ] Only the district admin can change the status
 
-Status: Incomplete
+Status: 2/3 Complete
 ```
 
 ####Teacher Account Invitations
