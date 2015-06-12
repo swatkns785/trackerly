@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  has_one :school_district
+  has_many :school_districts
+  has_many :school_district_memberships
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

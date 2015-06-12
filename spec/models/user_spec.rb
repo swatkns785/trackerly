@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  it { should have_many(:school_districts) }
+  it { should have_many(:school_district_memberships) }
+
   it { should have_valid(:first_name).when('Anthony', 'Jane') }
   it { should_not have_valid(:first_name).when(nil, '') }
 
