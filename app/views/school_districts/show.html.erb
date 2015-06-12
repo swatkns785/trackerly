@@ -13,3 +13,11 @@
 <div class="schools-box">
   <%= link_to "Add School", new_school_district_school_path(@school_district, @school) %>
 </div>
+
+<div class="sd-membership-invite-box">
+  <%= form_for @invite, url: school_district_invites_path do |f| %>
+    <%= f.hidden_field :school_district_id, value: @school_district.id %>
+    <%= f.email_field :email %>
+    <%= f.submit 'Send Invitation' %>
+  <% end %>
+</div>

@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :school_districts, only: [:new, :create, :show, :edit, :update, :index] do
     resources :schools, only: [:new, :create, :index, :show, :edit, :update]
   end
+
+  resources :school_district_invites
 end

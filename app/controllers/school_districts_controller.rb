@@ -7,6 +7,7 @@ class SchoolDistrictsController < ApplicationController
 
   def show
     @school_district = SchoolDistrict.find(params[:id])
+    @invite = SchoolDistrictInvite.new
   end
 
   def new

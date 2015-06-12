@@ -1,6 +1,11 @@
 class User < ActiveRecord::Base
   has_many :school_districts
   has_many :school_district_memberships
+  has_many :invitations, class_name: "SchoolDistrictInvite",
+    foreign_key: "recipient_id"
+
+  has_many :sent_invites, class_name: "SchoolDistrictInvite",
+    foreign_key: "sender_id"
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
