@@ -1,4 +1,10 @@
 class SchoolDistrictsController < ApplicationController
+  def index
+    if params[:query]
+      @school_districts = SchoolDistrict.search(params[:query])
+    end
+  end
+
   def show
     @school_district = SchoolDistrict.find(params[:id])
   end

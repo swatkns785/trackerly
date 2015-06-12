@@ -30,6 +30,10 @@ class SchoolDistrict < ActiveRecord::Base
     presence: true,
     numericality: { only_integer: true }
 
+  def self.search(query)
+    where("name ILIKE?", "%#{query}%")
+  end
+
   def district_admin
     user
   end
