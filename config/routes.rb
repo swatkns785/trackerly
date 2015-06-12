@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  root 'homes#index'
+  root 'school_districts#index'
   devise_for :users
 
-  resources :school_districts, only: [:new, :create, :show, :edit, :update] do
+  resources :school_districts, only: [:new, :create, :show, :edit, :update, :index] do
     resources :schools, only: [:new, :create, :index, :show, :edit, :update]
   end
 end

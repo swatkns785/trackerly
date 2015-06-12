@@ -1,0 +1,14 @@
+<p>
+  Modify me in `app/views/homes/index.html.erb` or change the root directive in
+  `config/routes.rb`
+</p>
+
+<div id="search-field">
+  <%= render "search_form" %>
+</div>
+
+<% if @school_districts %>
+  <div id="search-results">
+    <%= render "search_results" %>
+  </div>
+<% end %>

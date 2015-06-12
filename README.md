@@ -82,6 +82,14 @@ Acceptance Criteria:
 
 Status: 2/3 Complete
 ```
+####School District Membership
+```
+As an unaffiliated user
+I want to join a school district
+So that I can be affiliated with my school district
+
+[ ] I must be able to find
+```
 
 ####Teacher Account Invitations
 ```

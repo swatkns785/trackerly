@@ -1,0 +1,3 @@
+<% @school_districts.each do |school_district| %>
+  <li><%= link_to "#{school_district.name}", school_district_path(school_district) %>
+<% end %>
