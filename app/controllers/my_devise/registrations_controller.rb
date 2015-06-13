@@ -9,7 +9,7 @@ class MyDevise::RegistrationsController < Devise::RegistrationsController
     if @user.save
       @token = params[:invite_token]
       if @token != nil
-        invite = SchoolDistrictInvite.find_by(invite_token: @token)
+        invite = SchoolDistrictInvite.find_by(token: @token)
           .school_district_membership
         @user.school_district_memberships.push(invite)
       end

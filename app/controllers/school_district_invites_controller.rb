@@ -4,11 +4,14 @@ class SchoolDistrictInvitesController < ApplicationController
     @invite.sender_id = current_user.id
     if @invite.save
       if @invite.recipient != nil
-        SchoolDistrictInviteMailer.existing_user_invitation(@invite).deliver
+        SchoolDistrictInviteMailer.existing_user_invitation(@invite,
+          new_user_session_path(invite_token: @invite.token)).deliver
+        flash[:notice] = "Invitation sent."
         redirect_to school_district_path(@invite.school_district_id)
       else
         SchoolDistrictInviteMailer.new_user_invitation(@invite,
           new_user_registration_path(invite_token: @invite.token)).deliver
+        flash[:notice] = "Invitation sent."
         redirect_to school_district_path(@invite.school_district_id)
       end
     else

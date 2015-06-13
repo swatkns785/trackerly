@@ -7,8 +7,9 @@ class SchoolDistrictInviteMailer < ApplicationMailer
         #{@district_name} on Tracker.ly")
   end
 
-  def existing_user_invitation(invite)
+  def existing_user_invitation(invite, login_path)
     @invite = invite
+    @login_path = login_path
     @district_name = @invite.school_district.name
     mail(to: @invite.email, subject: "Invitation to join
         #{@district_name} on Tracker.ly")

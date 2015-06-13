@@ -16,6 +16,7 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+require 'email_spec'
 require 'coveralls'
 Coveralls.wear!('rails')
 RSpec.configure do |config|
@@ -41,6 +42,10 @@ RSpec.configure do |config|
     # `true` in RSpec 4.
     mocks.verify_partial_doubles = true
   end
+
+  ###email_spec
+  config.include(EmailSpec::Helpers)
+  config.include(EmailSpec::Matchers)
 
   config.color = true
 

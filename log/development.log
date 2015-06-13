@@ -2425,3 +2425,5 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 [0m
+  [1m[36mSchoolDistrictMembership Load (2.2ms)[0m  [1mSELECT "school_district_memberships".* FROM "school_district_memberships"[0m
+  [1m[35mSchoolDistrictInvite Load (0.7ms)[0m  SELECT "school_district_invites".* FROM "school_district_invites"
