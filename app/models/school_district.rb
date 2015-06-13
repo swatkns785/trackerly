@@ -1,6 +1,8 @@
 class SchoolDistrict < ActiveRecord::Base
   belongs_to :user
   has_many :schools
+  has_many :school_district_memberships
+  has_many :school_district_invites
 
   validates :user,
     presence: true

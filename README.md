@@ -4,6 +4,29 @@
 
 ###A tool for school districts to manage teacher and student activity and performance.
 
+###TODO LIST (in no particular order)
+```
+[ ] Deploy to Heroku
+[ ] Draft mock up for Front End
+[ ] figure out why school_district_invite can't read school_district_id as foreign_key
+[ ] fix ./spec/models/school_district_membership_spec.rb:6 test (related to ^)
+[ ] Remove role from user table (not necessary)
+[ ] Scope views where necessary to prevent non-admins from performing CRUD
+[ ] configure emails for production using Sendgrid
+[ ] Assign school district members (educators and administrators) to certain schools
+[ ] Create subjects object for school subjects
+[ ] Subjects and schools (some schools may not have all subjects)
+[ ] Subjects and educators (some teachers only teach certain subjects)
+###WAY IN THE FUTURE
+[ ] Student users
+[ ] Students assigned to schools
+[ ] Students assigned to school class sections
+[ ] Students assigned to grade levels
+[ ] Assignments per class
+[ ] Assignment grades (max points, earned points)
+[ ] To be continued...
+```
+
 WIP goals
 -Schools should be able to keep track of attendance on a per student basis.
 -Student grades are organized per lesson/assignment

@@ -30,4 +30,11 @@ FactoryGirl.define do
     school_type 'high school'
     status 'Active'
   end
+
+  factory :school_district_invite do
+    association :school_district
+    email 'jimmy.mcnulty@baltimore.com'
+    sender_id '5'
+    token '12345678902345678901'
+  end
 end
