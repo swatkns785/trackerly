@@ -24,5 +24,4 @@ end
 
 group :test do
   gem 'coveralls', require: false
-  # gem 'email_spec'
 end
