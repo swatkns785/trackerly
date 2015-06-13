@@ -14,10 +14,13 @@
   <%= link_to "Add School", new_school_district_school_path(@school_district, @school) %>
 </div>
 
-<div class="sd-membership-invite-box">
-  <%= form_for @invite, url: school_district_invites_path do |f| %>
-    <%= f.hidden_field :school_district_id, value: @school_district.id %>
-    <%= f.email_field :email %>
-    <%= f.submit 'Send Invitation' %>
-  <% end %>
-</div>
+<% if current_user == @school_district.district_admin %>
+  <div class="sd-membership-invite-box">
+    <%= form_for @invite, url: school_district_invites_path do |f| %>
+      <%= f.hidden_field :school_district_id, value: @school_district.id %>
+      <%= f.label :email, "Enter an email address to invite users to this district." %>
+      <%= f.email_field :email %>
+      <%= f.submit 'Send Invitation' %>
+    <% end %>
+  </div>
+<% end %>
