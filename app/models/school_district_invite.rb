@@ -5,6 +5,7 @@ class SchoolDistrictInvite < ActiveRecord::Base
   belongs_to :school_district, foreign_key: "school_district_id"
 
   before_create :generate_token
+  before_save :check_user_existence
 
   validates :email,
     presence: true,
@@ -16,8 +17,17 @@ class SchoolDistrictInvite < ActiveRecord::Base
   validates :school_district_id,
     numericality: { only_integer: true }
 
+  private
+
   def generate_token
     self.token = Digest::SHA1.hexdigest([self.school_district_id, Time.now,
       rand].join)
+  end
+
+  def check_user_existence
+    recipient = User.find_by(email: email)
+    if recipient
+      self.recipient_id = recipient.id
+    end
   end
 end
