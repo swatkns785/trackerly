@@ -10,7 +10,6 @@
 [ ] Draft mock up for Front End
 [ ] figure out why school_district_invite can't read school_district_id as foreign_key
 [ ] fix ./spec/models/school_district_membership_spec.rb:6 test (related to ^)
-[ ] Remove role from user table (not necessary)
 [ ] Scope views where necessary to prevent non-admins from performing CRUD
 [ ] configure emails for production using Sendgrid
 [ ] Assign school district members (educators and administrators) to certain schools
