@@ -17,6 +17,9 @@ RSpec.describe User, type: :model do
   it { should_not have_valid(:email).when(nil, 'jane', '.com', 'jane@net',
     'anthony.com') }
 
+  it { should have_valid(:account_type).when(nil, 'district admin',
+    'school admin', 'teacher') }
+
   it 'requires a unique email' do
     user = FactoryGirl.create(:user)
     other_user = FactoryGirl.create(:user)

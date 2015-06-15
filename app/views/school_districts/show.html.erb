@@ -20,6 +20,8 @@
       <%= f.hidden_field :school_district_id, value: @school_district.id %>
       <%= f.label :email, "Enter an email address to invite users to this district." %>
       <%= f.email_field :email %>
+      <%= f.label :account_type, "What type of account will this invitee have:" %>
+      <%= f.select :account_type, options_for_select(account_type_options), { include_blank: '' } %>
       <%= f.submit 'Send Invitation' %>
     <% end %>
   </div>

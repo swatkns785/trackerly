@@ -27,6 +27,7 @@ feature "a user invites someone to join school district on Tracker.ly", %q(
       visit school_district_path(school_district)
 
       fill_in :email, with: "boom@boom.com"
+      select "Teacher", from: "What type of account will this invitee have:"
       click_button "Send Invitation"
 
       expect(page).to have_content "Invitation sent."
