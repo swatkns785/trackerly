@@ -2,10 +2,12 @@ class MyDevise::RegistrationsController < Devise::RegistrationsController
   def new
     @user = User.new
     @token = params[:invite_token]
+    @account_type = params[:account_type]
   end
 
   def create
     @user = User.new(user_params)
+    @user.account_type = params[:account_type]
     if @user.save
       @token = params[:invite_token]
       if @token != nil
@@ -25,6 +27,6 @@ class MyDevise::RegistrationsController < Devise::RegistrationsController
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password,
-      :password_confirmation)
+      :password_confirmation, :account_type)
   end
 end

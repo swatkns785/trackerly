@@ -5,7 +5,9 @@ class SchoolDistrictInvitesController < ApplicationController
     if @invite.save
       if @invite.recipient != nil
         SchoolDistrictInviteMailer.existing_user_invitation(@invite,
-          new_user_session_path(invite_token: @invite.token)).deliver
+          new_user_session_path(invite_token: @invite.token,
+          account_type: @invite.account_type)).deliver
+
         flash[:notice] = "Invitation sent."
         redirect_to school_district_path(@invite.school_district_id)
       else
@@ -24,6 +26,6 @@ class SchoolDistrictInvitesController < ApplicationController
 
   def sdi_params
     params.require(:school_district_invite).permit(:email, :sender_id,
-      :recipient_id, :token, :school_district_id)
+      :recipient_id, :token, :school_district_id, :account_type)
   end
 end
