@@ -23,7 +23,7 @@
 [ ] Students assigned to grade levels
 [ ] Assignments per class
 [ ] Assignment grades (max points, earned points)
-[ ] To be continued...
+[ ] To be continued...(keep the streak alive)
 ```
 
 WIP goals
