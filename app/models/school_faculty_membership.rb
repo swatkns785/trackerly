@@ -9,4 +9,8 @@ class SchoolFacultyMembership < ActiveRecord::Base
   validates :school_district_membership_id,
     presence: true,
     numericality: { only_integer: true }
+
+  def user_name
+    school_district_membership.user.name
+  end
 end
