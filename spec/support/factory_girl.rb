@@ -21,7 +21,7 @@ FactoryGirl.define do
 
   factory :school do
     association :school_district
-    name 'Boston Latin School'
+    sequence(:name) { |n| "Boston Latin School #{n}" }
     website 'http://www.bls.org'
     address '155 Mills Road'
     city 'Boston'
@@ -36,5 +36,15 @@ FactoryGirl.define do
     email 'jimmy.mcnulty@baltimore.com'
     sender_id '5'
     token '12345678902345678901'
+  end
+
+  factory :school_district_membership do
+    association :user
+    association :school_district
+  end
+
+  factory :school_faculty_membership do
+    association :school_district_membership
+    association :school
   end
 end

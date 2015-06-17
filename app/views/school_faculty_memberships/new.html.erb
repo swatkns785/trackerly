@@ -1,0 +1,14 @@
+<h3>Use the form below to assign district faculty to their respective</h3>
+
+<%= form_for ([@school_district, @faculty_memberships]) do |f| %>
+  <ul>
+    <% @district_members.each do |district_member| %>
+      <li>
+        <%= label_tag "#{district_member.user.name}" %>
+        <%= select_tag(:school_id, options_for_select(@schools),
+        name: district_member.user.name, include_blank: true) %>
+      </li>
+    <% end %>
+  </ul>
+  <%= f.submit "Save School Assignments" %>
+<% end %>

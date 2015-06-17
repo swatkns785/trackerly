@@ -14,6 +14,10 @@
   <%= link_to "Add School", new_school_district_school_path(@school_district, @school) %>
 </div>
 
+<div>
+  <%= link_to "Staffing Assignments", school_district_school_faculty_memberships_path(@school_district, @district_memberships) %>
+</div>
+
 <% if current_user == @school_district.district_admin %>
   <div class="sd-membership-invite-box">
     <%= form_for @invite, url: school_district_invites_path do |f| %>

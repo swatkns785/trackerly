@@ -15,12 +15,13 @@ class SchoolDistrictsController < ApplicationController
   end
 
   def create
-    school_district = SchoolDistrict.new(school_district_params)
-    school_district.user = current_user
-    if school_district.save
+    @school_district = SchoolDistrict.new(school_district_params)
+    @school_district.user = current_user
+    if @school_district.save
       flash[:notice] = 'Successfully created new school district.'
-      redirect_to school_district_path(school_district)
+      redirect_to school_district_path(@school_district)
     else
+      flash[:alert] = 'Unable to save.'
       render :new
     end
   end
@@ -35,6 +36,7 @@ class SchoolDistrictsController < ApplicationController
       flash[:notice] = 'You have successfully edited your school district.'
       redirect_to school_district_path(school_district)
     else
+      flash[:alert] = 'Unable to save.'
       render :edit
     end
   end
@@ -43,6 +45,6 @@ class SchoolDistrictsController < ApplicationController
 
   def school_district_params
     params.require(:school_district).permit(:name, :website, :address, :city,
-      :state, :zip_code)
+      :state, :zip_code, :user_id)
   end
 end

@@ -1,5 +1,6 @@
 class School < ActiveRecord::Base
   belongs_to :school_district
+  has_many :users, through: :school_faculty_memberships
 
   validates :name,
     presence: true
