@@ -4,7 +4,7 @@
   <%= link_to school.name, school_district_school_path(@school_district, school) %>
   <ul>
     <% school.school_faculty_memberships.each do |member| %>
-      <li><%= member.school_district_membership.user.name %></li>
+      <li><%= member.user_name %></li>
     <% end %>
   </ul>
 <% end %>
