@@ -1,6 +1,7 @@
 class SchoolFacultyMembershipsController < ApplicationController
   def index
     @school_district = SchoolDistrict.find(params[:school_district_id])
+    @schools = @school_district.schools.order(name: :asc)
   end
 
   def new
