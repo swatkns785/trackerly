@@ -10,6 +10,10 @@ class SchoolFacultyMembership < ActiveRecord::Base
     presence: true,
     numericality: { only_integer: true }
 
+  def user
+    school_district_membership.user
+  end
+
   def user_name
     school_district_membership.user.name
   end

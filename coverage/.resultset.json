@@ -33,7 +33,7 @@
         null,
         null,
         1,
-        40,
+        42,
         null,
         null
       ],
@@ -69,7 +69,7 @@
       "/Users/stevenwatkins/Dropbox/trackerly/app/controllers/school_districts_controller.rb": [
         1,
         1,
-        20,
+        22,
         1,
         null,
         null,
@@ -129,14 +129,14 @@
         null,
         1,
         null,
-        38,
+        42,
         null,
         null
       ],
       "/Users/stevenwatkins/Dropbox/trackerly/app/controllers/schools_controller.rb": [
         1,
         1,
-        5,
+        7,
         null,
         null,
         1,
@@ -207,6 +207,19 @@
         1,
         1,
         1,
+        null
+      ],
+      "/Users/stevenwatkins/Dropbox/trackerly/app/models/school_department.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/stevenwatkins/Dropbox/trackerly/app/models/school_district_invite.rb": [
@@ -318,11 +331,16 @@
         null,
         null,
         1,
+        2,
+        null,
+        null,
+        1,
         5,
         null,
         null
       ],
       "/Users/stevenwatkins/Dropbox/trackerly/app/models/school.rb": [
+        1,
         1,
         1,
         1,
@@ -397,10 +415,9 @@
         null,
         null
       ],
-      "/Users/stevenwatkins/Dropbox/trackerly/app/controllers/my_devise/registrations_controller.rb": [
+      "/Users/stevenwatkins/Dropbox/trackerly/app/controllers/school_departments_controller.rb": [
         1,
         1,
-        2,
         2,
         2,
         null,
@@ -409,16 +426,11 @@
         2,
         2,
         2,
-        1,
-        1,
-        0,
-        null,
-        0,
-        null,
-        1,
+        2,
         1,
         1,
         null,
+        1,
         1,
         null,
         null,
@@ -427,7 +439,6 @@
         null,
         1,
         2,
-        null,
         null,
         null
       ],
@@ -463,8 +474,42 @@
         null,
         null,
         null
+      ],
+      "/Users/stevenwatkins/Dropbox/trackerly/app/controllers/my_devise/registrations_controller.rb": [
+        1,
+        1,
+        2,
+        2,
+        2,
+        null,
+        null,
+        1,
+        2,
+        2,
+        2,
+        1,
+        1,
+        0,
+        null,
+        0,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1434509212
+    "timestamp": 1434523382
   }
 }

@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe School, type: :model do
   it { should belong_to(:school_district) }
+  it { should have_many(:school_faculty_memberships) }
+  it { should have_many(:school_departments) }
 
   it { should have_valid(:name).when('Boston Latin School') }
   it { should_not have_valid(:name).when(nil, '') }

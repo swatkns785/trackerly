@@ -8,5 +8,9 @@ Rails.application.routes.draw do
     resources :school_faculty_memberships, only: [:index, :new, :create]
   end
 
+  resources :schools, only: :show do
+    resources :school_departments, only: [:new, :create]
+  end
+
   resources :school_district_invites
 end
