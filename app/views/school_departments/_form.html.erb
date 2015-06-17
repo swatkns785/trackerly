@@ -1,0 +1,15 @@
+<% if @school_department.errors.any? %>
+  <% @school_department.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+<% end %>
+
+<%= form_for([@school, @school_department]) do |f| %>
+  <div class="field">
+    <%= f.label :name, "Department Name" %>
+    <%= f.text_field :name %>
+  </div>
+  <p>
+    <%= f.submit "Submit" %>
+  </p>
+<% end %>
