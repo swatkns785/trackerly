@@ -19,7 +19,6 @@ class SchoolFacultyMembershipsController < ApplicationController
     @school_names = @schools.map { |school| school.name }
     @district_members = SchoolDistrictMembership.where(
       school_district_id: @school_district.id)
-    @district_member_names = @district_members.map { |member| member.user.name }
 
     @schools.each do |school|
       @district_members.each do |district_member|

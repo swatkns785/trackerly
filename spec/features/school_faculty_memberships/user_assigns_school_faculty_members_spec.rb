@@ -7,15 +7,20 @@ feature "assign faculty to schools", %q(
   So that the right staff can be accurately represented
 
   Acceptance Criteria:
-  [ ] I must be able to make assignments from the school district page.
+  [x] I must be able to make assignments from the school district page.
   [ ] Only a district administrator can make the assignments.
-  [ ] I can only assign staff members who are members of the district.
-  [ ] I must see a message confirming the assignments.
-  [ ] I must be able to assign more than one teacher at a time.
+  [x] I can only assign staff members who are members of the district.
+  [x] I must see a message confirming the assignments.
+  [x] I must be able to assign more than one teacher at a time.
 
 ) do
 
   let(:school_district) { FactoryGirl.create(:school_district) }
+  let(:district_member) { FactoryGirl.create(
+    :school_district_membership, school_district_id: school_district.id) }
+
+  let(:member_of_another_district) { FactoryGirl.create(
+    :school_district_membership) }
 
   context "as a school district administrator" do
     scenario "assign staff to schools" do
@@ -37,6 +42,7 @@ feature "assign faculty to schools", %q(
 
       expect(page).to have_content(
         "Use the form below to assign district faculty to their respective")
+      expect(page).to_not have_content member_of_another_district.user.name
 
       select "#{school1.name}", from: member1.user.name
       select "#{school2.name}", from: member2.user.name
@@ -46,4 +52,14 @@ feature "assign faculty to schools", %q(
       expect(SchoolFacultyMembership.all.count).to eq(2)
     end
   end
+
+  context "as a school district member but not an admin" do
+    scenario "cannot update school faculty memmberships" do
+      sign_in_as(district_member.user)
+      visit school_district_path(school_district)
+
+      expect(page).to_not have_link "Staffing Assignments"
+    end
+  end
+
 end
