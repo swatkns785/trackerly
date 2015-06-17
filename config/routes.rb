@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   devise_for :users,
              :controllers => { registrations: "my_devise/registrations"}
 
-  resources :school_districts, only: [:new, :create, :show, :edit, :update, :index] do
+  resources :school_districts do
     resources :schools, only: [:new, :create, :index, :show, :edit, :update]
+    resources :school_faculty_memberships, only: [:index, :new, :create]
   end
 
   resources :school_district_invites
